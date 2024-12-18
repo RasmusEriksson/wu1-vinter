@@ -34,14 +34,33 @@ html, body {
     height: 100vh;
 }
 
+@keyframes test {
+    0% {background-color: rgb(71, 71, 117);}
+    50% {background-color: rgb(83, 83, 168);}
+    100% {background-color: rgb(71, 71, 117);}
+}
+
 body {
     margin: 0;
     padding: 0;
     display: grid;
     place-items: center;
-    background-color: var(--color-bg);
+    animation-name: test;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+
     z-index: -1;
 }
+
+@keyframes gradient {
+    0% {background-image: linear-gradient(blue,white);}
+    50% {background-image: linear-gradient(rgb(89, 89, 191),rgb(240, 236, 165));}
+    100% {background-image: linear-gradient(blue,white);}
+}
+
+
 
 main {
     text-align: center;
@@ -49,19 +68,18 @@ main {
     z-index: 1;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-content: center;
+    justify-content: center;
 }
 
 .card {
     background-color: rgb(226, 78, 78);
-    width: min(100% - 5rem, var(--container-max, 70ch));
+    width: min(100% - 5rem, var(--container-max, 80ch));
     margin-inline: auto;
     padding: 1rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
 
-    
 
     outline-style: double;
     outline-width: 1rem;
@@ -78,9 +96,9 @@ main {
 }
 
 .ornament1 {
-    width: min(30% - 5rem, var(--container-max, 70ch));
+    width: min(30% - 5rem, var(--container-max, 35ch));
     height: fit-content;
-    margin-top: 15%;
+    margin-top: 25%;
 }
 
 h1 {
@@ -104,3 +122,9 @@ canvas {
     left: 0;
     z-index: 0;
 }
+
+@media screen and (max-width: 1000px) {
+    .ornament1 {
+        display: none;
+    }
+  }
